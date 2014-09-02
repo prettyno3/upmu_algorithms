@@ -1,4 +1,4 @@
-__author__ = 'andrew'
+__author__ = 'immesys'
 
 import numpy as np
 import qdf
