@@ -14,7 +14,7 @@ class Example1HZ(qdf.QuasarDistillate):
         self.set_author("MPA")
 
         #This is the second level. This name should be unique for every algorithm you write
-        self.set_name("SinWaves")
+        self.set_name("Sing")
 
         #This is the final level. You can have multiple of these
         self.add_stream("1hz", unit="unit")
