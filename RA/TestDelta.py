@@ -43,7 +43,7 @@ class DistillateDriver(qdf.QuasarDistillate):
         for start, end in changed_ranges:
             print "Computing for %d to %d", start, end
             #delete whatever data we had generated for that range
-            yield self.stream_delete_range("delta", start, end)
+            yield self.stream_delete_range("delta1", start, end)
 
             current = start
             while current < end:
