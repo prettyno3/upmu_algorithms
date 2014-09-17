@@ -14,7 +14,7 @@ class DistillateDriver(qdf.QuasarDistillate):
         self.set_author("MPA")
 
         #This is the second level. This name should be unique for every algorithm you write
-        self.set_name("Delta5")
+        self.set_name("Delta")
 
         #This is the final level. You can have multiple of these
         self.add_stream("delta1", unit="Degrees")
