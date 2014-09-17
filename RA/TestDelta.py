@@ -17,7 +17,7 @@ class DistillateDriver(qdf.QuasarDistillate):
         self.set_name("Delta5")
 
         #This is the final level. You can have multiple of these
-        self.add_stream("delta", unit="Degrees")
+        self.add_stream("delta1", unit="Degrees")
 
         self.use_stream("2hz", "571ce598-3ffd-499b-be6c-0df52e597c93")
         self.use_stream("1hz", "49129d4a-335e-4c81-a8a4-27f5d8c45646")
@@ -70,7 +70,7 @@ class DistillateDriver(qdf.QuasarDistillate):
                     idx1 += 1
                     idx2 += 1
 
-                yield self.stream_insert_multiple("delta", delta_values)
+                yield self.stream_insert_multiple("delta1", delta_values)
 
                 current += 15 * qdf.MINUTE
 
