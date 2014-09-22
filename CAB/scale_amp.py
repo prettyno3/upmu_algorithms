@@ -66,3 +66,4 @@ class ExampleScale(qdf.QuasarDistillate):
 
 
 qdf.register(ExampleScale())
+qdf.begin()
