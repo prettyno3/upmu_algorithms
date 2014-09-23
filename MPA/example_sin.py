@@ -30,7 +30,7 @@ class Example1HZ(qdf.QuasarDistillate):
         This is called to compute your algorithm.
 
         This example generates some sin waves at different frequencies. It also ensures that this
-        sin wave extends from Aug 17th midnight until 15 minutes past that
+        sin wave extends from Sep 17th midnight until Sep 18th minutes past that
         """
         #Typically, a stream would be based upon other streams, so you would calculate the ranges
         #that need updating by querying the changed ranges in those streams. We are generating
@@ -39,7 +39,7 @@ class Example1HZ(qdf.QuasarDistillate):
         #The first parameter is the name of the data point we stored. The second is what value
         #to get back if it did not exist.
         last_end_date = self.unpersist("end_timestamp", None)
-        target_end_date = self.date("2014-08-17T00:30:00")
+        target_end_date = self.date("2014-09-18T00:30:00")
 
         if last_end_date is None:
             #this is the first time we have run this algorithm or we
