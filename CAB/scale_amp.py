@@ -12,7 +12,7 @@ class ExampleScale(qdf.QuasarDistillate):
         """
         #TEMP. In future, find dynamically
         self.input_name = "1hz"
-        input_uid = "bff73f6a-7671-4f06-b44b-d41e86efb7c1"
+        input_uid = "2942433b-6511-4298-a0b2-2886456cff4f"
         version = 1
 
         #This is the first level in the distillate tree
