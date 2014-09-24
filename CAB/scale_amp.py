@@ -55,11 +55,11 @@ class ExampleScale(qdf.QuasarDistillate):
             scaled_value = input_values[idx].value * scale_factor
             scaled_values.append((input_values[idx].time, scaled_value))
             if len(scaled_values) >= qdf.OPTIMAL_BATCH_SIZE:
-                yield self.stream_insert_multiple("Scaled Amp", scaled_values)
+                yield self.stream_insert_multiple("Scale_Amp", scaled_values)
                 scaled_values = []
             idx += 1
 
-        yield self.stream_insert_multiple("Scaled Amp", scaled_values)
+        yield self.stream_insert_multiple("Scale_Amp", scaled_values)
 
         #Now that we are done, save the time we finished at
         self.persist("done", True)
