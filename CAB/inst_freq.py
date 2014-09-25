@@ -12,7 +12,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         """
         #TEMP. In future, find dynamically
         self.input_name = "2hz" #default: C1ANG
-        self.ouput_name = "2hz_derivative_test" #default: soda_a_C1ANG
+        self.output_name = "2hz_derivative_test" #default: soda_a_C1ANG
         input_uid = "74182356-6d1e-4123-b312-5cc70da89840"
         version = 1
 
