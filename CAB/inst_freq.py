@@ -11,10 +11,10 @@ class Inst_Freq(qdf.QuasarDistillate):
         This constructs your distillate algorithm
         """
         #TEMP. In future, find dynamically
-        self.input_name = "2hz" #default: C1ANG
-        self.output_name = "2hz_derivative_test" #default: soda_a_C1ANG
-        input_uid = "74182356-6d1e-4123-b312-5cc70da89840"
-        version = 2
+        self.input_stream = "C1ANG"
+        self.output_stream = "soda_a_C1ANG"
+        input_uid = "888b8f61-c2a4-44a1-bd5c-9865ea6ea8ca"
+        version = 1
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
