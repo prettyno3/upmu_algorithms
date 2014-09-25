@@ -14,7 +14,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         self.input_stream = "C1ANG"
         self.output_stream = "soda_a_C1ANG"
         input_uid = "888b8f61-c2a4-44a1-bd5c-9865ea6ea8ca"
-        version = 2
+        version = 3
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
@@ -36,7 +36,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         """
         This is called to compute your algorithm.
 
-        This example generates the difference between two streams
+        This example generates the instantaneous frequency of phase
         """
 
         if self.unpersist("done",False):
