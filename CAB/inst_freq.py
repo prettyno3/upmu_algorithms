@@ -54,6 +54,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         while i < len(input_phases)-1:
             phase_diff = input_phases[i+1].value - input_phases[i].value
             delta = input_phases[i+1].time - input_phases[i].time
+            delta /= 10e9
             if delta == 0:
                 i += 1
                 continue
