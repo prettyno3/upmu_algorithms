@@ -56,7 +56,7 @@ class Inst_Freq(qdf.QuasarDistillate):
             delta_samples = sampling_freq #upper bound
             t1 = input_phases[i].time
             t2 = input_phases[i+delta_samples].time
-            while ((t2 - t1) > 1e9 && t2 > t1: #catch zeroed or missing samples
+            while ((t2 - t1) > 1e9 and t2 > t1: #catch zeroed or missing samples
                 delta_samples -= 1 #decrement ~one sample per missing sample in interval
                 t2 = input_phases[i+delta_samples].time
             x1 = input_phases[i].value
