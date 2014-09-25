@@ -59,13 +59,13 @@ class Inst_Freq(qdf.QuasarDistillate):
             while ((t2 - t1) > 1e9 and t2 > t1): #catch zeroed or missing samples
                 delta_samples -= 1 #decrement ~one sample per missing sample in interval
                 t2 = input_phases[i+delta_samples].time
+            if t2 - t1 < 1e9: #if sample 1 second from now is missing, skip
+                i += 1
+                continue
             x1 = input_phases[i].value
             x2 = input_phases[i+delta_samples].value
             phase_diff = x2 - x1
             delta_time = t2 - t1
-            if delta_time == 0:
-                i += 1
-                continue
             if phase_diff > 180:
                 phase_diff -= 360
             elif phase_diff < -180:
