@@ -23,9 +23,9 @@ class Inst_Freq(qdf.QuasarDistillate):
         self.set_name("Instantaneous Frequency")
 
         #This is the final level. You can have multiple of these
-        self.add_stream(self.output_name, unit="deg/s")
+        self.add_stream(self.output_stream, unit="deg/s")
 
-        self.use_stream(self.input_name, input_uid)
+        self.use_stream(self.input_stream, input_uid)
 
         #If this is incremented, it is assumed that the whole distillate is invalidated, and it
         #will be deleted and discarded. In addition all 'persist' data will be removed
@@ -47,7 +47,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         start_date = self.date("2014-08-17T00:00:00.000000")
         end_date = self.date("2014-08-17T00:15:00.000000")
 
-        input_version, input_phases = yield self.stream_get(self.input_name, start_date, end_date)
+        input_version, input_phases = yield self.stream_get(self.input_stream, start_date, end_date)
         inst_freqs = []
 
         i = 0
@@ -63,11 +63,11 @@ class Inst_Freq(qdf.QuasarDistillate):
                 phase_diff += 360
             inst_freqs.append((input_phases[i].time, (phase_diff/delta)*1e9))
             if len(inst_freqs) >= qdf.OPTIMAL_BATCH_SIZE:
-                yield self.stream_insert_multiple(self.output_name, inst_freqs)
+                yield self.stream_insert_multiple(self.output_stream, inst_freqs)
                 inst_freqs = []
             i += 1
 
-        yield self.stream_insert_multiple(self.output_name, inst_freqs)
+        yield self.stream_insert_multiple(self.output_stream, inst_freqs)
 
         #Now that we are done, save the time we finished at
         self.persist("done", True)
