@@ -14,7 +14,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         self.input_stream = "C1ANG"
         self.output_stream = "soda_a_C1ANG"
         input_uid = "888b8f61-c2a4-44a1-bd5c-9865ea6ea8ca"
-        version = 4
+        version = 5
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
@@ -44,8 +44,8 @@ class Inst_Freq(qdf.QuasarDistillate):
             return
 
         #TEMP. In future, find dynamically
-        start_date = self.date("2014-09-17T00:00:00.000000")
-        end_date = self.date("2014-09-17T00:30:00.000000")
+        start_date = self.date("2014-09-07T00:00:00.000000")
+        end_date = self.date("2014-09-07T02:00:00.000000")
 
         input_version, input_phases = yield self.stream_get(self.input_stream, start_date, end_date)
         inst_freqs = []
@@ -60,7 +60,7 @@ class Inst_Freq(qdf.QuasarDistillate):
                 delta_samples -= 1 #decrement ~one sample per missing sample in interval
                 t2 = input_phases[i+delta_samples].time
             x1 = input_phases[i].value
-            x2 = input_phases[i+delta_samples].value
+            x2 = input_phases[i+delta_samples]
             phase_diff = x2 - x1
             delta_time = t2 - t1
             if delta_time == 0:
