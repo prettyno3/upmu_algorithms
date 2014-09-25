@@ -70,7 +70,7 @@ class Inst_Freq(qdf.QuasarDistillate):
                 phase_diff -= 360
             elif phase_diff < -180:
                 phase_diff += 360
-            inst_freqs.append(t1, (phase_diff/delta_time)*1e9))
+            inst_freqs.append((t1, (phase_diff/delta_time)*1e9))
             if len(inst_freqs) >= qdf.OPTIMAL_BATCH_SIZE:
                 yield self.stream_insert_multiple(self.output_stream, inst_freqs)
                 inst_freqs = []
