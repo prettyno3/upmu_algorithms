@@ -44,8 +44,8 @@ class Inst_Freq(qdf.QuasarDistillate):
             return
 
         #TEMP. In future, find dynamically
-        start_date = self.date("2014-08-17T00:00:00.000000")
-        end_date = self.date("2014-08-17T00:15:00.000000")
+        start_date = self.date("2014-09-17T00:00:00.000000")
+        end_date = self.date("2014-09-18T00:00:00.000000")
 
         input_version, input_phases = yield self.stream_get(self.input_stream, start_date, end_date)
         inst_freqs = []
