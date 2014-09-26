@@ -13,7 +13,7 @@ class ExampleScale(qdf.QuasarDistillate):
         #TEMP. In future, find dynamically
         self.input_name = "L1MAG"
         input_uid = "abffcf07-9e17-404a-98c3-ea4d60042ff3"
-        version = 1
+        version = 2
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
