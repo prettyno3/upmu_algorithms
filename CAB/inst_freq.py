@@ -11,10 +11,10 @@ class Inst_Freq(qdf.QuasarDistillate):
         This constructs your distillate algorithm
         """
         #TEMP. In future, find dynamically
-        self.input_stream = "C1ANG"
-        self.output_stream = "soda_a_C1ANG"
-        input_uid = "888b8f61-c2a4-44a1-bd5c-9865ea6ea8ca"
-        version = 6
+        self.input_stream = "L1ANG"
+        self.output_stream = "soda_a_L1ANG"
+        input_uid = "4d6525a9-b8ad-48a4-ae98-b171562cf817"
+        version = 7
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
@@ -45,7 +45,7 @@ class Inst_Freq(qdf.QuasarDistillate):
 
         #TEMP. In future, find dynamically
         start_date = self.date("2014-09-07T00:00:00.000000")
-        end_date = self.date("2014-09-07T02:00:00.000000")
+        end_date = self.date("2014-09-07T04:00:00.000000")
 
         input_version, input_phases = yield self.stream_get(self.input_stream, start_date, end_date)
         inst_freqs = []
