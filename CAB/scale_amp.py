@@ -22,7 +22,7 @@ class ExampleScale(qdf.QuasarDistillate):
         self.set_name("Scale_Amp")
 
         #This is the final level. You can have multiple of these
-        self.add_stream("soda_L1Mag_4.5", unit="V")
+        self.add_stream("soda_a_L1Mag_4.5", unit="V")
 
         self.use_stream(self.input_name, input_uid)
 
