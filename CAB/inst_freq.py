@@ -14,7 +14,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         self.input_stream = "L1ANG"
         self.output_stream = "soda_a_L1ANG"
         input_uid = "4d6525a9-b8ad-48a4-ae98-b171562cf817"
-        version = 7
+        version = 8
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
@@ -23,7 +23,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         self.set_name("Instantaneous Frequency")
 
         #This is the final level. You can have multiple of these
-        self.add_stream(self.output_stream, unit="deg/s")
+        self.add_stream(self.output_stream, unit="Hz")
 
         self.use_stream(self.input_stream, input_uid)
 
@@ -70,7 +70,7 @@ class Inst_Freq(qdf.QuasarDistillate):
                 phase_diff -= 360
             elif phase_diff < -180:
                 phase_diff += 360
-            inst_freqs.append((t1, (phase_diff/delta_time)*1e9))
+            inst_freqs.append((t1, (phase_diff/delta_time)*1e9/360 + 60))
             if len(inst_freqs) >= qdf.OPTIMAL_BATCH_SIZE:
                 yield self.stream_insert_multiple(self.output_stream, inst_freqs)
                 inst_freqs = []
