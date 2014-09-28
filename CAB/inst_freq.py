@@ -14,7 +14,7 @@ class Inst_Freq(qdf.QuasarDistillate):
         self.input_stream = "L1ANG"
         self.output_stream = "soda_a_L1ANG"
         input_uid = "4d6525a9-b8ad-48a4-ae98-b171562cf817"
-        version = 9
+        version = 10
 
         #This is the first level in the distillate tree
         self.set_author("CAB")
